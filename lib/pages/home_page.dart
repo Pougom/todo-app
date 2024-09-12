@@ -64,6 +64,16 @@ class _HomePageState extends State<HomePage> {
     db.updateDatabase();
   }
 
+  // edit Task
+  void editTask(int index) {
+    /*_controller.text = toDoList[
+        index]; // ENREGISTRE LE NOM DE LA TACHE DANS UNE VARIABLE avant d'afficher le dialog
+    toDoList.removeAt(index);*/
+    deleteTask(index);
+    addNewTask();
+    db.updateDatabase();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
