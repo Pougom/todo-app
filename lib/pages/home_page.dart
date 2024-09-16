@@ -116,6 +116,7 @@ class _HomePageState extends State<HomePage> {
                   taskFinish: db.toDoList[index][1],
                   onChanged: (value) => toDoStateChanged(value, index),
                   removeTask: (context) => deleteTask(index),
+                  editTask: (context) => editTask(index),
                 );
               },
             ),
