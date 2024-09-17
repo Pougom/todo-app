@@ -68,10 +68,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.more_vert))],
+        actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert))
+        ],
         backgroundColor: Colors.yellow,
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "TO DO APP",
           style: TextStyle(fontSize: 40),
         ),
@@ -88,7 +90,7 @@ class _HomePageState extends State<HomePage> {
         ),
         child: Stack(
           children: [
-            Center(
+            const Center(
               child: Opacity(
                 opacity: 0.5,
                 child: Icon(
@@ -114,8 +116,8 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: addNewTask,
-        child: Icon(Icons.add),
         backgroundColor: Colors.yellow,
+        child: const Icon(Icons.add),
       ),
     );
   }

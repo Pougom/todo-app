@@ -20,7 +20,7 @@ class Notes_list extends StatelessWidget {
         padding: const EdgeInsets.only(left: 25, right: 25, top: 25),
         child: Slidable(
           startActionPane: ActionPane(
-            motion: StretchMotion(),
+            motion: const StretchMotion(),
             children: [
               SlidableAction(
                 onPressed: removeTask,
@@ -30,7 +30,7 @@ class Notes_list extends StatelessWidget {
               )
             ],
           ),
-          endActionPane: ActionPane(motion: StretchMotion(), children: [
+          endActionPane: ActionPane(motion: const StretchMotion(), children: [
             SlidableAction(
               onPressed: removeTask,
               icon: Icons.delete,
@@ -39,6 +39,11 @@ class Notes_list extends StatelessWidget {
             )
           ]),
           child: Container(
+            decoration: BoxDecoration(
+              color: Colors.yellow.shade100,
+              borderRadius: BorderRadius.circular(15),
+            ),
+            padding: const EdgeInsets.all(25),
             child: Row(
               children: [
                 Checkbox(
@@ -54,11 +59,6 @@ class Notes_list extends StatelessWidget {
                             : TextDecoration.none)),
               ],
             ),
-            decoration: BoxDecoration(
-              color: Colors.yellow.shade100,
-              borderRadius: BorderRadius.circular(15),
-            ),
-            padding: const EdgeInsets.all(25),
           ),
         ));
   }

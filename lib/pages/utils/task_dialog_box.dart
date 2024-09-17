@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 
 class Task_Dialog_Box extends StatelessWidget {
+  // ignore: prefer_typing_uninitialized_variables
   final controller;
   VoidCallback onClose;
   VoidCallback onCheck;
@@ -28,12 +29,12 @@ class Task_Dialog_Box extends StatelessWidget {
         children: [
           TextField(
             controller: controller,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               border: OutlineInputBorder(),
               hintText: "Add a new Task",
             ),
           ),
-          Icon(
+          const Icon(
             Icons.star,
             size: 60,
             color: Colors.yellow,
@@ -45,12 +46,12 @@ class Task_Dialog_Box extends StatelessWidget {
                   color: Colors.red,
                   iconSize: 50,
                   onPressed: onClose,
-                  icon: Icon(Icons.close)),
+                  icon: const Icon(Icons.close)),
               IconButton(
                   color: Colors.green,
                   iconSize: 50,
                   onPressed: onCheck,
-                  icon: Icon(Icons.check)),
+                  icon: const Icon(Icons.check)),
             ],
           )
         ],
