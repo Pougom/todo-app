@@ -6,34 +6,25 @@ class Notes_list extends StatelessWidget {
   final bool taskFinish;
   Function(bool?)? onChanged;
   Function(BuildContext)? removeTask;
-  Function(BuildContext)? editTask;
 
   Notes_list(
       {super.key,
       required this.taskName,
       required this.taskFinish,
       required this.onChanged,
-      required this.removeTask,
-      required this.editTask});
+      required this.removeTask});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.only(left: 25, right: 25, top: 25),
+        padding: const EdgeInsets.only(left: 25, right: 25, top: 25),
         child: Slidable(
           startActionPane: ActionPane(
-            motion: DrawerMotion(),
+            motion: StretchMotion(),
             children: [
               SlidableAction(
                 onPressed: removeTask,
-                icon: Icons.delete,
-                backgroundColor: Colors.red,
-                foregroundColor: Colors.white,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              SlidableAction(
-                onPressed: editTask,
-                icon: Icons.mode_edit,
+                icon: Icons.edit,
                 backgroundColor: Colors.green,
                 borderRadius: BorderRadius.circular(12),
               )
@@ -44,12 +35,6 @@ class Notes_list extends StatelessWidget {
               onPressed: removeTask,
               icon: Icons.delete,
               backgroundColor: Colors.red,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            SlidableAction(
-              onPressed: editTask,
-              icon: Icons.mode_edit,
-              backgroundColor: Colors.green,
               borderRadius: BorderRadius.circular(12),
             )
           ]),
